@@ -7,21 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4607542CBDA666B3DF9BDF5D /* Pods_AndorraTelecomPublic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569E07E5BEA618B6FE707643 /* Pods_AndorraTelecomPublic.framework */; };
 		4B1FF3391F274C8000ECB73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1FF3381F274C8000ECB73F /* AppDelegate.swift */; };
-		4B1FF33B1F274C8000ECB73F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1FF33A1F274C8000ECB73F /* ViewController.swift */; };
-		4B1FF33E1F274C8000ECB73F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1FF33C1F274C8000ECB73F /* Main.storyboard */; };
-		4B1FF3401F274C8000ECB73F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1FF33F1F274C8000ECB73F /* Assets.xcassets */; };
-		4B1FF3431F274C8000ECB73F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1FF3411F274C8000ECB73F /* LaunchScreen.storyboard */; };
+		4B9A910B1F3C66D6007DB477 /* callmeback.css in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91041F3C66D5007DB477 /* callmeback.css */; };
+		4B9A910C1F3C66D6007DB477 /* forfet.css in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91051F3C66D5007DB477 /* forfet.css */; };
+		4B9A910D1F3C66D6007DB477 /* menu.css in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91061F3C66D5007DB477 /* menu.css */; };
+		4B9A910E1F3C66D6007DB477 /* callmeback.js in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91081F3C66D5007DB477 /* callmeback.js */; };
+		4B9A910F1F3C66D6007DB477 /* forfet.js in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91091F3C66D5007DB477 /* forfet.js */; };
+		4B9A91101F3C66D6007DB477 /* menu.js in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A910A1F3C66D5007DB477 /* menu.js */; };
+		4B9A91191F3C678A007DB477 /* ForfetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A91171F3C678A007DB477 /* ForfetViewController.swift */; };
+		4B9A911A1F3C678A007DB477 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A91181F3C678A007DB477 /* MenuViewController.swift */; };
+		4B9A91201F3C67CB007DB477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A911C1F3C67CB007DB477 /* LaunchScreen.storyboard */; };
+		4B9A91211F3C67CB007DB477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A911E1F3C67CB007DB477 /* Main.storyboard */; };
+		4B9A91231F3C67EC007DB477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91221F3C67EC007DB477 /* Assets.xcassets */; };
+		4B9A91261F3C681A007DB477 /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A91251F3C681A007DB477 /* LanguageHelper.swift */; };
+		4B9A91321F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A912F1F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift */; };
+		4B9A91331F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A91301F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift */; };
+		4B9A91341F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91311F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib */; };
+		4B9A913F1F3C71D2007DB477 /* translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91411F3C71D2007DB477 /* translations.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26F86B4F5FE9C338001ECCFA /* Pods-AndorraTelecomPublic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AndorraTelecomPublic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AndorraTelecomPublic/Pods-AndorraTelecomPublic.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1FF3351F274C8000ECB73F /* AndorraTelecomPublic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndorraTelecomPublic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1FF3381F274C8000ECB73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B1FF33A1F274C8000ECB73F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4B1FF33D1F274C8000ECB73F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4B1FF33F1F274C8000ECB73F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B1FF3421F274C8000ECB73F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B1FF3441F274C8000ECB73F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B9A91041F3C66D5007DB477 /* callmeback.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = callmeback.css; sourceTree = "<group>"; };
+		4B9A91051F3C66D5007DB477 /* forfet.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = forfet.css; sourceTree = "<group>"; };
+		4B9A91061F3C66D5007DB477 /* menu.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = menu.css; sourceTree = "<group>"; };
+		4B9A91081F3C66D5007DB477 /* callmeback.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = callmeback.js; sourceTree = "<group>"; };
+		4B9A91091F3C66D5007DB477 /* forfet.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = forfet.js; sourceTree = "<group>"; };
+		4B9A910A1F3C66D5007DB477 /* menu.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = menu.js; sourceTree = "<group>"; };
+		4B9A91171F3C678A007DB477 /* ForfetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForfetViewController.swift; sourceTree = "<group>"; };
+		4B9A91181F3C678A007DB477 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4B9A911D1F3C67CB007DB477 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B9A911F1F3C67CB007DB477 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B9A91221F3C67EC007DB477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B9A91251F3C681A007DB477 /* LanguageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageHelper.swift; sourceTree = "<group>"; };
+		4B9A91281F3C6929007DB477 /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ca; path = ca.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B9A91291F3C6929007DB477 /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ca; path = ca.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B9A912A1F3C6938007DB477 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B9A912B1F3C6938007DB477 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B9A912C1F3C6945007DB477 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B9A912D1F3C6945007DB477 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B9A912F1F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndorraTelecomProgressPresenter.swift; sourceTree = "<group>"; };
+		4B9A91301F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortletDisplayView_andorra_telecom.swift; sourceTree = "<group>"; };
+		4B9A91311F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortletDisplayView_andorra_telecom.xib; sourceTree = "<group>"; };
+		4B9A91401F3C71D2007DB477 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/translations.strings; sourceTree = "<group>"; };
+		4B9A91421F3C71E1007DB477 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/translations.strings; sourceTree = "<group>"; };
+		4B9A91431F3C71F0007DB477 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/translations.strings; sourceTree = "<group>"; };
+		4B9A91441F3C71FD007DB477 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/translations.strings; sourceTree = "<group>"; };
+		569E07E5BEA618B6FE707643 /* Pods_AndorraTelecomPublic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AndorraTelecomPublic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6661B11A4AE031863E199AEC /* Pods-AndorraTelecomPublic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AndorraTelecomPublic.release.xcconfig"; path = "Pods/Target Support Files/Pods-AndorraTelecomPublic/Pods-AndorraTelecomPublic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +66,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4607542CBDA666B3DF9BDF5D /* Pods_AndorraTelecomPublic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15C5A8867BDFC243B421D0F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26F86B4F5FE9C338001ECCFA /* Pods-AndorraTelecomPublic.debug.xcconfig */,
+				6661B11A4AE031863E199AEC /* Pods-AndorraTelecomPublic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4B1FF32C1F274C8000ECB73F = {
 			isa = PBXGroup;
 			children = (
+				4B9A912E1F3C6A44007DB477 /* Theme */,
 				4B1FF3371F274C8000ECB73F /* AndorraTelecomPublic */,
 				4B1FF3361F274C8000ECB73F /* Products */,
+				15C5A8867BDFC243B421D0F9 /* Pods */,
+				669CD7AEDB67B3CEF611A47B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +104,97 @@
 		4B1FF3371F274C8000ECB73F /* AndorraTelecomPublic */ = {
 			isa = PBXGroup;
 			children = (
+				4B9A91271F3C68F9007DB477 /* Translations */,
+				4B9A91241F3C680C007DB477 /* Helpers */,
+				4B9A911B1F3C67CB007DB477 /* Views */,
+				4B9A91161F3C678A007DB477 /* ViewControllers */,
+				4B9A91021F3C666C007DB477 /* Resources */,
 				4B1FF3381F274C8000ECB73F /* AppDelegate.swift */,
-				4B1FF33A1F274C8000ECB73F /* ViewController.swift */,
-				4B1FF33C1F274C8000ECB73F /* Main.storyboard */,
-				4B1FF33F1F274C8000ECB73F /* Assets.xcassets */,
-				4B1FF3411F274C8000ECB73F /* LaunchScreen.storyboard */,
 				4B1FF3441F274C8000ECB73F /* Info.plist */,
 			);
 			path = AndorraTelecomPublic;
+			sourceTree = "<group>";
+		};
+		4B9A91021F3C666C007DB477 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A91221F3C67EC007DB477 /* Assets.xcassets */,
+				4B9A91031F3C66D5007DB477 /* css */,
+				4B9A91071F3C66D5007DB477 /* js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4B9A91031F3C66D5007DB477 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A91041F3C66D5007DB477 /* callmeback.css */,
+				4B9A91051F3C66D5007DB477 /* forfet.css */,
+				4B9A91061F3C66D5007DB477 /* menu.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		4B9A91071F3C66D5007DB477 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A91081F3C66D5007DB477 /* callmeback.js */,
+				4B9A91091F3C66D5007DB477 /* forfet.js */,
+				4B9A910A1F3C66D5007DB477 /* menu.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+		4B9A91161F3C678A007DB477 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A91171F3C678A007DB477 /* ForfetViewController.swift */,
+				4B9A91181F3C678A007DB477 /* MenuViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4B9A911B1F3C67CB007DB477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A911C1F3C67CB007DB477 /* LaunchScreen.storyboard */,
+				4B9A911E1F3C67CB007DB477 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4B9A91241F3C680C007DB477 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A91251F3C681A007DB477 /* LanguageHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4B9A91271F3C68F9007DB477 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A91411F3C71D2007DB477 /* translations.strings */,
+			);
+			path = Translations;
+			sourceTree = "<group>";
+		};
+		4B9A912E1F3C6A44007DB477 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				4B9A912F1F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift */,
+				4B9A91301F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift */,
+				4B9A91311F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		669CD7AEDB67B3CEF611A47B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				569E07E5BEA618B6FE707643 /* Pods_AndorraTelecomPublic.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B1FF3471F274C8000ECB73F /* Build configuration list for PBXNativeTarget "AndorraTelecomPublic" */;
 			buildPhases = (
+				8170B76B40470F301A1C002D /* [CP] Check Pods Manifest.lock */,
 				4B1FF3311F274C8000ECB73F /* Sources */,
 				4B1FF3321F274C8000ECB73F /* Frameworks */,
 				4B1FF3331F274C8000ECB73F /* Resources */,
+				B3E9473B35E8BFAA198D8180 /* [CP] Embed Pods Frameworks */,
+				667EAA4DCCF3956DBFE0A10B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -106,7 +242,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ca,
+				fr,
+				es,
 			);
 			mainGroup = 4B1FF32C1F274C8000ECB73F;
 			productRefGroup = 4B1FF3361F274C8000ECB73F /* Products */;
@@ -123,20 +261,80 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B1FF3431F274C8000ECB73F /* LaunchScreen.storyboard in Resources */,
-				4B1FF3401F274C8000ECB73F /* Assets.xcassets in Resources */,
-				4B1FF33E1F274C8000ECB73F /* Main.storyboard in Resources */,
+				4B9A910B1F3C66D6007DB477 /* callmeback.css in Resources */,
+				4B9A910C1F3C66D6007DB477 /* forfet.css in Resources */,
+				4B9A910F1F3C66D6007DB477 /* forfet.js in Resources */,
+				4B9A91341F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib in Resources */,
+				4B9A910D1F3C66D6007DB477 /* menu.css in Resources */,
+				4B9A91211F3C67CB007DB477 /* Main.storyboard in Resources */,
+				4B9A910E1F3C66D6007DB477 /* callmeback.js in Resources */,
+				4B9A91201F3C67CB007DB477 /* LaunchScreen.storyboard in Resources */,
+				4B9A91101F3C66D6007DB477 /* menu.js in Resources */,
+				4B9A913F1F3C71D2007DB477 /* translations.strings in Resources */,
+				4B9A91231F3C67EC007DB477 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		667EAA4DCCF3956DBFE0A10B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AndorraTelecomPublic/Pods-AndorraTelecomPublic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8170B76B40470F301A1C002D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3E9473B35E8BFAA198D8180 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AndorraTelecomPublic/Pods-AndorraTelecomPublic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B1FF3311F274C8000ECB73F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B1FF33B1F274C8000ECB73F /* ViewController.swift in Sources */,
+				4B9A911A1F3C678A007DB477 /* MenuViewController.swift in Sources */,
+				4B9A91261F3C681A007DB477 /* LanguageHelper.swift in Sources */,
+				4B9A91321F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift in Sources */,
+				4B9A91331F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift in Sources */,
+				4B9A91191F3C678A007DB477 /* ForfetViewController.swift in Sources */,
 				4B1FF3391F274C8000ECB73F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,20 +342,37 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4B1FF33C1F274C8000ECB73F /* Main.storyboard */ = {
+		4B9A911C1F3C67CB007DB477 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4B1FF33D1F274C8000ECB73F /* Base */,
+				4B9A911D1F3C67CB007DB477 /* en */,
+				4B9A91281F3C6929007DB477 /* ca */,
+				4B9A912A1F3C6938007DB477 /* fr */,
+				4B9A912C1F3C6945007DB477 /* es */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4B9A911E1F3C67CB007DB477 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B9A911F1F3C67CB007DB477 /* en */,
+				4B9A91291F3C6929007DB477 /* ca */,
+				4B9A912B1F3C6938007DB477 /* fr */,
+				4B9A912D1F3C6945007DB477 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4B1FF3411F274C8000ECB73F /* LaunchScreen.storyboard */ = {
+		4B9A91411F3C71D2007DB477 /* translations.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4B1FF3421F274C8000ECB73F /* Base */,
+				4B9A91401F3C71D2007DB477 /* en */,
+				4B9A91421F3C71E1007DB477 /* ca */,
+				4B9A91431F3C71F0007DB477 /* fr */,
+				4B9A91441F3C71FD007DB477 /* es */,
 			);
-			name = LaunchScreen.storyboard;
+			name = translations.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -167,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -217,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -258,6 +475,7 @@
 		};
 		4B1FF3481F274C8000ECB73F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F86B4F5FE9C338001ECCFA /* Pods-AndorraTelecomPublic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AndorraTelecomPublic/Info.plist;
@@ -270,6 +488,7 @@
 		};
 		4B1FF3491F274C8000ECB73F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6661B11A4AE031863E199AEC /* Pods-AndorraTelecomPublic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AndorraTelecomPublic/Info.plist;
@@ -299,6 +518,7 @@
 				4B1FF3491F274C8000ECB73F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
