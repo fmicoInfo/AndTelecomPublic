@@ -1,0 +1,11 @@
+/* 
+  translations.strings
+  AndorraTelecomPublic
+
+  Created by Francisco Mico on 10/08/2017.
+  Copyright © 2017 Liferay. All rights reserved.
+*/
+"cancel" = "Cancel·lar";
+"language" = "Idioma";
+"choose" = "Tria una opció";
+"section" = "Secció";
