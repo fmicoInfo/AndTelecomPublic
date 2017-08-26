@@ -1,0 +1,21 @@
+body{
+    background: rgba(211, 5, 114, 0.36);
+    color: #FFF;
+}
+
+.numbered-lists dt:before{
+    border: 3px solid #FFF;
+    color: #FFF;
+}
+
+h1 {
+    color: #FFF;
+}
+
+.cont-wrapper p{
+    color: #FFF;
+}
+
+.numbered-lists dt p a{
+    color: #FFF;
+}

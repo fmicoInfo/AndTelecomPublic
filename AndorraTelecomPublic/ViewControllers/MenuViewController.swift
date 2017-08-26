@@ -151,7 +151,8 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
     
     func goNextForfet(position: String) {
         performSegue(withIdentifier: "forfet", sender: position)
-        print("Position \(position)")
+    }
+    
     func goToMap() {
         performSegue(withIdentifier: "map", sender: nil)
     }
@@ -178,6 +179,34 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
             
         }
     }
-
+    
+    func showAlertLegalNotAccepted(callMeBackView: CallMeBackView, title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showLegalCoditions(callMeBackView: CallMeBackView) {
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let margin:CGFloat = 10.0
+        let rect = CGRect(x: margin, y: margin, width: alertController.view.bounds.size.width - margin * 6.0, height: 340)
+        
+        let legalConditionView = LegalConditionsView(frame: rect)
+        
+        alertController.view.addSubview(legalConditionView)
+        
+        let acceptAction = UIAlertAction(title: "accept".localized(), style: .default, handler: {(alert: UIAlertAction!) in self.callMeBack.legalConditionsChange(isAccepted: true)})
+        
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: {(alert: UIAlertAction!) in self.callMeBack.legalConditionsChange(isAccepted: false)})
+        
+        alertController.addAction(acceptAction)
+        alertController.addAction(cancelAction)
+        
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion:{})
+        }
+        
+    }
 }
 
