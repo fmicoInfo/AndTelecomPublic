@@ -13,6 +13,9 @@
 */
 import Foundation
 import LiferayScreens
+#if LIFERAY_SCREENS_FRAMEWORK
+    import MBProgressHUD
+#endif
 
 
 open class AndorraTelecomProgressPresenter: MBProgressHUDPresenter {
@@ -20,8 +23,25 @@ open class AndorraTelecomProgressPresenter: MBProgressHUDPresenter {
 	override public init() {
 		super.init()
         
+        
 		self.customColor = UIColor(red:0.55, green:0.05, blue:0.34, alpha:1.0)
 		self.customOpacity = 0.6
 	}
+    
+    open override func showHUDInView(_ view: UIView, message: String?, forInteractor interactor: Interactor) {
+        
+        dispatch_main {
+            
+            if super.instance == nil {
+                super.instance = MBProgressHUD.showAdded(to: view, animated:true)
+            }
+            
+            self.configureAndShowHUD(super.instance!,
+                                     message: "loading".localized(),
+                                     closeMode: .manualClose,
+                                     spinnerMode: .indeterminateSpinner)
+        }
+        
+    }
 
 }
