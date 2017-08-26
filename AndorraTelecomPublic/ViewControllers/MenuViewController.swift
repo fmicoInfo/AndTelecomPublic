@@ -9,11 +9,9 @@
 import UIKit
 import LiferayScreens
 
-class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
-
-    @IBOutlet weak var portletDisplayScreenlet: PortletDisplayScreenlet!
 class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, CallMeBackDelegate {
     
+    @IBOutlet weak var portletDisplayScreenlet: PortletDisplayScreenlet!
     
     @IBOutlet weak var heightCallMeBack: NSLayoutConstraint!
     @IBOutlet weak var headerCallmeBack: UIView!
@@ -31,6 +29,7 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         callMeBack.delegate = self
         
         buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
+        textButtonBack()
         loadPortletScreenlet()
     }
     
@@ -63,9 +62,10 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         for value in LanguageHelper.shared().listLanguages {
             let itemAction: UIAlertAction = UIAlertAction(title: value, style: .default) { action -> Void in
                 LanguageHelper.shared().change(language: value)
-                self.loadPortletScreenlet()
+                
                 self.buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
                 self.loadPortletScreenlet()
+                self.textButtonBack()
                 self.callMeBack.setTextOutlets()
             }
             actionSheetController.addAction(itemAction)
@@ -77,6 +77,11 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         
         actionSheetController.addAction(cancelAction)
         self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func textButtonBack() {
+        let backItem = UIBarButtonItem(title: "back".localized(), style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
     }
     
     func attachClickHeaderCallBack() {
@@ -113,18 +118,6 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         
         portletDisplayScreenlet.load()
         portletDisplayScreenlet.delegate = self
-
-        configurationPortletScreenletCallMeBack()
-    }
-    
-    func configurationPortletScreenletCallMeBack() {
-        let portletConfiguration = PortletConfiguration
-            .Builder(portletUrl: LanguageHelper.shared().url(page: .index))
-            .set(webType: .liferay)
-            .addCss(localFile: "callmeback")
-            .addJs(localFile: "callmeback")
-            .load()
-        portletDisplayScreenletCallBackMe.configuration = portletConfiguration
     }
     
     func screenlet(_ screenlet: PortletDisplayScreenlet, onScriptMessageNamespace namespace: String, onScriptMessage message: String) {

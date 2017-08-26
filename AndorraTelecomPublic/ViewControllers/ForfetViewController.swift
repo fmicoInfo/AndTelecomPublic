@@ -28,6 +28,7 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
             .addCss(localFile: "forfet")
             .addJs(localFile: "forfet")
             .load()
+        
         portletDisplayScreenlet.configuration = portletConfiguration
         
         portletDisplayScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
