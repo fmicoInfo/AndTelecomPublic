@@ -12,13 +12,15 @@ import LiferayScreens
 class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
 
     @IBOutlet weak var portletDisplayScreenlet: PortletDisplayScreenlet!
+class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, CallMeBackDelegate {
     
-    @IBOutlet weak var portletDisplayScreenletCallBackMe: PortletDisplayScreenlet!
     
     @IBOutlet weak var heightCallMeBack: NSLayoutConstraint!
     @IBOutlet weak var headerCallmeBack: UIView!
     @IBOutlet weak var viewCallmeBack: UIView!
     @IBOutlet weak var labelCallMeBack: UILabel!
+    
+    @IBOutlet weak var callMeBack: CallMeBackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
         addLogoToNavegationBar()
         modifyHeightCallMeBack(height: 0)
         attachClickHeaderCallBack()
+        callMeBack.delegate = self
         
         buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
         loadPortletScreenlet()
@@ -62,6 +65,8 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
                 LanguageHelper.shared().change(language: value)
                 self.loadPortletScreenlet()
                 self.buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
+                self.loadPortletScreenlet()
+                self.callMeBack.setTextOutlets()
             }
             actionSheetController.addAction(itemAction)
         }
@@ -81,11 +86,14 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
     
     func checkAction(sender : UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
-            if self.heightCallMeBack.constant.isEqual(to: 460){
-                self.heightCallMeBack.constant = 50
+            let bigSize:CGFloat = 400.0
+            let smallSize:CGFloat = 50.0
+            
+            if self.heightCallMeBack.constant.isEqual(to: bigSize){
+                self.heightCallMeBack.constant = smallSize
                 self.viewCallmeBack.superview?.layoutIfNeeded()
             } else {
-                self.heightCallMeBack.constant = 460
+                self.heightCallMeBack.constant = bigSize
                 self.viewCallmeBack.superview?.layoutIfNeeded()
             }
             
@@ -149,7 +157,7 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
     }
     
     func onPortletPageLoaded(_ screenlet: PortletDisplayScreenlet, url: String) {
-        portletDisplayScreenletCallBackMe.load()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
