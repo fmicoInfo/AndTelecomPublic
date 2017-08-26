@@ -125,6 +125,8 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
                 createPopOverCallMeBack(message: message);
             case "click-button":
                 goNextForfet(position: message)
+            case "map":
+                goToMap()
             default:
                 print("Any event")
         }
@@ -142,6 +144,8 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate {
     func goNextForfet(position: String) {
         performSegue(withIdentifier: "forfet", sender: position)
         print("Position \(position)")
+    func goToMap() {
+        performSegue(withIdentifier: "map", sender: nil)
     }
     
     func onPortletPageLoaded(_ screenlet: PortletDisplayScreenlet, url: String) {

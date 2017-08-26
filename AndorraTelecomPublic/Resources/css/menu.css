@@ -14,7 +14,7 @@ body{
 
 ul{
     margin: 3%;
-    margin-top: 10%;
+    margin-top: 6%;
 }
 
 li.item-button {
@@ -22,7 +22,7 @@ li.item-button {
     color: #FFF;
     float: left;
     margin: 3%;
-    padding: 5% 0%;
+    padding: 3% 0%;
     position: relative;
     width: 44%;
     border-radius: 8px;
@@ -35,4 +35,21 @@ li.item-button {
 
 img{
     max-width: 150%;
+}
+
+.coverage-container{
+    margin: 0% 3%;
+}
+
+.coverage-button {
+    color: #FFF;
+    float: left;
+    margin: 3%;
+    padding: 3% 0%;
+    position: relative;
+    width: 94%;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #FFF;
+    text-align: center;
 }
