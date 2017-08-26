@@ -5,7 +5,23 @@
   Created by Francisco Mico on 10/08/2017.
   Copyright © 2017 Liferay. All rights reserved.
 */
+"back" = "Enrrere";
 "cancel" = "Cancel·lar";
+"accept" = "Acceptar";
 "language" = "Idioma";
 "choose" = "Tria una opció";
 "section" = "Secció";
+"loading" = "Carregant...";
+
+"help?" = "¿En què et podem ajudar?";
+"phone" = "Telèfono";
+"accept-legal" = "Accepto les condicions legals";
+"call-me-now" = "TRUQUEU-ME ARA";
+"or" = "o";
+"i-call" = "YO TRUQUE";
+
+"title-legal" = "Condicions legals";
+"legal-no-accept" = "Necessita acceptar les condicions";
+
+"title-call" = "Et truquem";
+"call" = "Nosaltres et truquem promte al telèfono que ens has facilitat";

@@ -63,12 +63,11 @@ class LanguageHelper {
     }
     
     func url(page: Pages) -> String {
-        return "https://www.andorratelecom.ad/c/portal/update_language?p_l_id=\(page.plid)&redirect=\(page.pathName)&languageId=\(self.formattedId)"
+        let url = "https://www.andorratelecom.ad/c/portal/update_language?p_l_id=\(page.plid)&redirect=\(page.pathName)&languageId=\(self.formattedId)"
+        print("URL: \(url)")
+        
+        return url
     }
-    
-//    func getLocalization(key: String) -> String {
-//        return Bundle.main.localizedString(forKey: key, value: nil, table: "translations")
-//    }
     
     enum Pages: String {
         case index
@@ -76,6 +75,7 @@ class LanguageHelper {
         case roming
         case paquete69
         case optima
+        case legal
         
         var plid: String {
             switch self {
@@ -89,6 +89,8 @@ class LanguageHelper {
                 return "108620"
             case .optima:
                 return "106754"
+            case .legal:
+                return "34691"
             }
         }
         
@@ -104,6 +106,8 @@ class LanguageHelper {
                 return "/particulares/som-internet-fija/paquetes-internet-fija/paquet-69/"
             case .optima:
                 return "/particulares/som-internet-fija/paquetes-internet-fija/optima/"
+            case .legal:
+                return "/avis-legal/"
             }
         }
     }
