@@ -8,9 +8,10 @@
 
 import Foundation
 import LiferayScreens
+import Hokusai
 
 class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
-    
+
     var url: String = ""
     var menuList: String = ""
     
@@ -48,7 +49,11 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
     }
     
     func createButtonMenuList() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "section".localized(), style: .plain, target: self, action: #selector(createMenuList))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "section".localized(),
+            style: .plain,
+            target: self,
+            action: Colorful.flag ? #selector(createColorfullMenuList) : #selector(createMenuList))
     }
     
     func createMenuList() {
@@ -74,6 +79,29 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
+    func createColorfullMenuList() {
+        let hokusai = Hokusai()
+        
+        hokusai.colors = HOKColors(
+            backGroundColor: UIColor(red:0.82, green:0.02, blue:0.45, alpha:1.0),
+            buttonColor: UIColor(red:0.55, green:0.05, blue:0.34, alpha:1.0),
+            cancelButtonColor: UIColor(red:0.55, green:0.05, blue:0.34, alpha:1.0),
+            fontColor: UIColor.white
+        )
+        
+        let fullList = self.menuList.components(separatedBy: "|")
+        
+        for i in 0...fullList.count - 1 {
+            var item = fullList[i].components(separatedBy: ",")
+            
+            hokusai.addButton(item[0]) {
+                self.portletDisplayScreenlet.inject(injectableScript: JsScript(name: item[0], js: "gotoId(\"\(item[1])\")"))
+            }
+        }
+        
+        hokusai.show()
+    }
+    
     func screenlet(_ screenlet: PortletDisplayScreenlet, onScriptMessageNamespace namespace: String, onScriptMessage message: String) {
         switch namespace {
         case "menu":
@@ -88,7 +116,5 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
     func onPortletPageLoaded(_ screenlet: PortletDisplayScreenlet, url: String) {
         portletDisplayScreenlet.inject(injectableScript: JsScript(name: "Nombre", js: "ahora()"))
     }
-    
-    
     
 }

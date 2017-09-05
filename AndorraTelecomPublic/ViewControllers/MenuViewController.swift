@@ -8,6 +8,7 @@
 
 import UIKit
 import LiferayScreens
+import Hokusai
 
 class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, CallMeBackDelegate {
     
@@ -17,15 +18,16 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
     @IBOutlet weak var headerCallmeBack: UIView!
     @IBOutlet weak var viewCallmeBack: UIView!
     @IBOutlet weak var labelCallMeBack: UILabel!
-    
     @IBOutlet weak var callMeBack: CallMeBackView!
+    @IBOutlet weak var coverForClick: UIVisualEffectView!
+    
+    var coverNavegationBar: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addLogoToNavegationBar()
         modifyHeightCallMeBack(height: 0)
-        attachClickHeaderCallBack()
         callMeBack.delegate = self
         
         buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
@@ -53,20 +55,19 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
     }
     
     func buttonChangeLanguage(language: String) {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: language, style: .plain, target: self, action: #selector(onClickChangeLanguage))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: language,
+            style: .plain,
+            target: self,
+            action: Colorful.flag ? #selector(menuChangeLanguageColorful) : #selector(menuChangeLanguage))
     }
     
-    func onClickChangeLanguage() {
+    func menuChangeLanguage() {
         let actionSheetController: UIAlertController = UIAlertController(title: "language".localized(), message: "choose".localized(), preferredStyle: .actionSheet)
         
         for value in LanguageHelper.shared().listLanguages {
             let itemAction: UIAlertAction = UIAlertAction(title: value, style: .default) { action -> Void in
-                LanguageHelper.shared().change(language: value)
-                
-                self.buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
-                self.loadPortletScreenlet()
-                self.textButtonBack()
-                self.callMeBack.setTextOutlets()
+                self.actionChangeLanguage(value: value)
             }
             actionSheetController.addAction(itemAction)
         }
@@ -79,17 +80,51 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
+    func menuChangeLanguageColorful() {
+        let hokusai = Hokusai()
+        
+        hokusai.colors = HOKColors(
+            backGroundColor: UIColor.lightPurple,
+            buttonColor: UIColor.darkPurple,
+            cancelButtonColor: UIColor.darkPurple,
+            fontColor: UIColor.white
+        )
+        
+        for value in LanguageHelper.shared().listLanguages {
+            hokusai.addButton(value) {
+                self.actionChangeLanguage(value: value)
+            }
+        }
+        hokusai.show()
+    }
+    
+    func actionChangeLanguage(value: String) {
+        LanguageHelper.shared().change(language: value)
+        self.buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
+        self.loadPortletScreenlet()
+        self.textButtonBack()
+        self.callMeBack.setTextOutlets()
+    }
+    
     func textButtonBack() {
         let backItem = UIBarButtonItem(title: "back".localized(), style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
     }
     
     func attachClickHeaderCallBack() {
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector (MenuViewController.checkAction(sender:)))
-        self.headerCallmeBack.addGestureRecognizer(gesture)
+        let headerGesture = UITapGestureRecognizer(target: self, action:  #selector (MenuViewController.callBackActions(sender:)))
+        
+        let touchUpViewGesture = UITapGestureRecognizer(target: self, action:  #selector (MenuViewController.callBackActions(sender:)))
+        
+        let navBarViewGesture = UITapGestureRecognizer(target: self, action:  #selector (MenuViewController.callBackActions(sender:)))
+        
+        self.headerCallmeBack.addGestureRecognizer(headerGesture)
+        self.coverForClick.addGestureRecognizer(touchUpViewGesture)
+        self.coverNavegationBar!.addGestureRecognizer(navBarViewGesture)
+
     }
     
-    func checkAction(sender : UITapGestureRecognizer) {
+    func callBackActions(sender : UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
             let bigSize:CGFloat = 400.0
             let smallSize:CGFloat = 50.0
@@ -97,12 +132,33 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
             if self.heightCallMeBack.constant.isEqual(to: bigSize){
                 self.heightCallMeBack.constant = smallSize
                 self.viewCallmeBack.superview?.layoutIfNeeded()
+                
+                self.navigationController?.navigationBar.dismissChangeBackgroundColor(view: self.coverNavegationBar!, isUserInteraccionEnable: false)
+                self.coverForClick.dismissChangeBackgroundColor(isHidden: true)
+                self.coverNavegationBar?.isUserInteractionEnabled = false
             } else {
                 self.heightCallMeBack.constant = bigSize
                 self.viewCallmeBack.superview?.layoutIfNeeded()
+                
+                self.navigationController?.navigationBar.animatedChangeBackgroundColor(view: self.coverNavegationBar!, isUserInteraccionEnable: true)
+                self.coverForClick.animatedChangeBackgroundColor(isHidden: false)
+                self.coverNavegationBar?.isUserInteractionEnabled = true
             }
             
         })
+    }
+    
+    func prepareCoverNavegationBar() {
+        let xposition = self.navigationController?.navigationBar.frame.origin.x
+        let yposition = (self.navigationController?.navigationBar.frame.origin.y)! - 60
+        let height = (self.navigationController?.navigationBar.frame.size.height)! + 40
+        let width = self.navigationController?.navigationBar.frame.size.width
+        
+        let frame = CGRect(x: xposition!, y: yposition, width: width!, height: height)
+        
+        self.coverNavegationBar = UIView(frame: frame)
+        self.navigationController?.navigationBar.addSubview(self.coverNavegationBar!)
+        self.coverNavegationBar?.isUserInteractionEnabled = false
     }
     
     func loadPortletScreenlet() {
@@ -113,11 +169,16 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
             .addJs(localFile: "menu")
             .load()
         portletDisplayScreenlet.configuration = portletConfiguration
-        
-        portletDisplayScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
+        portletDisplayScreenlet.isScrollEnabled = false
+        portletDisplayScreenlet.backgroundColor = UIColor.lightPurple
         
         portletDisplayScreenlet.load()
         portletDisplayScreenlet.delegate = self
+    }
+    
+    func onPortletPageLoaded(_ screenlet: PortletDisplayScreenlet, url: String) {
+        prepareCoverNavegationBar()
+        attachClickHeaderCallBack()
     }
     
     func screenlet(_ screenlet: PortletDisplayScreenlet, onScriptMessageNamespace namespace: String, onScriptMessage message: String) {
@@ -150,10 +211,6 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         performSegue(withIdentifier: "map", sender: nil)
     }
     
-    func onPortletPageLoaded(_ screenlet: PortletDisplayScreenlet, url: String) {
-        
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "forfet" ,
             let vc = segue.destination as? ForfetViewController {
@@ -176,6 +233,7 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
     func showAlertLegalNotAccepted(callMeBackView: CallMeBackView, title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        alert.colorfull()
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -191,10 +249,13 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         
         let acceptAction = UIAlertAction(title: "accept".localized(), style: .default, handler: {(alert: UIAlertAction!) in self.callMeBack.legalConditionsChange(isAccepted: true)})
         
+        
         let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: {(alert: UIAlertAction!) in self.callMeBack.legalConditionsChange(isAccepted: false)})
         
         alertController.addAction(acceptAction)
         alertController.addAction(cancelAction)
+        
+        alertController.colorfull()
         
         DispatchQueue.main.async {
             self.present(alertController, animated: true, completion:{})
