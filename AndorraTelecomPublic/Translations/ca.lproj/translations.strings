@@ -25,3 +25,4 @@
 
 "title-call" = "Et truquem";
 "call" = "Nosaltres et truquem promte al telèfono que ens has facilitat";
+"phone-not-valid" = "Aquest numero de telèfon no és vàlid per a Andorra";

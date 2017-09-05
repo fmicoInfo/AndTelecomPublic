@@ -25,3 +25,4 @@
 
 "title-call" = "Nous vous appelons";
 "call" = "Nous vous contacterons bientôt au téléphone que vous nous avez donné";
+"phone-not-valid" = "Ce téléphone n'est pas valable pour Andorre";

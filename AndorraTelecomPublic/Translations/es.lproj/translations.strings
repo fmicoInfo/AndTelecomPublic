@@ -25,3 +25,4 @@
 
 "title-call" = "Nosotros te llamamos";
 "call" = "Nosotros te llamaremos pronto al teléfono que nos has facilitado";
+"phone-not-valid" = "Este número de teléfono no es válido en Andorra";

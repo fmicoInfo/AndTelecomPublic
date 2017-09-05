@@ -18,10 +18,11 @@
 "accept-legal" = "I accept the legal conditions";
 "call-me-now" = "CALL ME NOW";
 "or" = "or";
-"i-call" = "I Call";
+"i-call" = "I CALL";
 
 "title-legal" = "Legal conditions";
 "legal-no-accept" = "You need to accept the conditions";
 
 "title-call" = "We call you";
 "call" = "We will call you soon to the telephone that you have given us";
+"phone-not-valid" = "This telephone number isn't valid for Andorra";
