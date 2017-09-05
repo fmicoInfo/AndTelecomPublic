@@ -19,6 +19,7 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPortletScreenlet()
+        addLogoToNavegationBar()
     }
     
     func loadPortletScreenlet() {
@@ -34,6 +35,16 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
         portletDisplayScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
         portletDisplayScreenlet.load()
         portletDisplayScreenlet.delegate = self
+    }
+    
+    func addLogoToNavegationBar() {
+        let logo = UIImage(named: "Logo") as UIImage?
+        let imageView = UIImageView(image:logo)
+        imageView.frame.size.width = 100;
+        imageView.frame.size.height = 32;
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.navigationItem.titleView = imageView
     }
     
     func createButtonMenuList() {
