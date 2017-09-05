@@ -38,7 +38,7 @@ class LegalConditionsView: UIView, PortletDisplayScreenletDelegate {
     func loadPortletScreenlet() {
         let portletConfiguration = PortletConfiguration
             .Builder(portletUrl: LanguageHelper.shared().url(page: .legal))
-            .set(webType: .liferay)
+            .set(webType: .other)
             .addCss(localFile: "legal")
             .addJs(localFile: "legal")
             .load()
