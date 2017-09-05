@@ -108,7 +108,7 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
     func loadPortletScreenlet() {
         let portletConfiguration = PortletConfiguration
             .Builder(portletUrl: LanguageHelper.shared().url(page: .index))
-            .set(webType: .liferay)
+            .set(webType: .other)
             .addCss(localFile: "menu")
             .addJs(localFile: "menu")
             .load()

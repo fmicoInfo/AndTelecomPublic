@@ -2,7 +2,10 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'AndorraTelecomPublic' do
-    pod 'LiferayScreens', :git => 'https://github.com/liferay/liferay-screens', :branch => 'feature/LSR-1004'
+    pod 'LiferayScreens', :git => 'https://github.com/liferay/liferay-screens', :branch => 'develop'
+    pod 'Alamofire'
+    pod 'DynamicBlurView'
+    pod 'Hokusai'
 end
 
 post_install do |installer|

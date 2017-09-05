@@ -24,7 +24,7 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
     func loadPortletScreenlet() {
         let portletConfiguration = PortletConfiguration
             .Builder(portletUrl: self.url)
-            .set(webType: .liferay)
+            .set(webType: .other)
             .addCss(localFile: "forfet")
             .addJs(localFile: "forfet")
             .load()

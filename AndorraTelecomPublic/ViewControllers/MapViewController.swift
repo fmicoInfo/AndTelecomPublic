@@ -11,8 +11,6 @@ import LiferayScreens
 
 class MapViewController: UIViewController {
     
-    //https://www.npmjs.com/package/cusspvz-cordova-plugin-mapbox
-
     @IBOutlet var portletDisplayScreenlet: PortletDisplayScreenlet!
     
     override func viewDidLoad() {
@@ -21,17 +19,17 @@ class MapViewController: UIViewController {
     }
     
     func loadPortletScreenlet() {
-        
-        /*let portletConfiguration = PortletConfiguration
-            .Builder(portletUrl: html!)
-            .set(webType: .liferay)
-            .addCss(localFile: "forfet")
-            .addJs(localFile: "forfet")
+        let portletConfiguration = PortletConfiguration
+            .Builder(portletUrl: LanguageHelper.shared().url(page: .map))
+            .set(webType: .other)
+            .addCss(localFile: "map")
+            .addJs(localFile: "map")
             .load()
-        
         portletDisplayScreenlet.configuration = portletConfiguration
         
-        portletDisplayScreenlet.load()*/
+        portletDisplayScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
+        
+        portletDisplayScreenlet.load()
     }
 
     override func didReceiveMemoryWarning() {
