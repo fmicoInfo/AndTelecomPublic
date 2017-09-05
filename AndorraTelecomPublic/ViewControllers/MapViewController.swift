@@ -15,7 +15,12 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadPortletScreenlet()
+        loadPortletScreenlet()
+        addLogoToNavegationBar()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     func loadPortletScreenlet() {
@@ -31,9 +36,15 @@ class MapViewController: UIViewController {
         
         portletDisplayScreenlet.load()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func addLogoToNavegationBar() {
+        let logo = UIImage(named: "Logo") as UIImage?
+        let imageView = UIImageView(image:logo)
+        imageView.frame.size.width = 100;
+        imageView.frame.size.height = 32;
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.navigationItem.titleView = imageView
     }
 
 }
