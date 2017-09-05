@@ -49,6 +49,10 @@ class CallMeBackView: UIView {
     }
     
     @IBAction func callMeNow(_ sender: UIButton) {
+        let phoneCount = phoneTextField.text?.characters.count
+        if phoneCount != 6{
+            delegate?.showAlertLegalNotAccepted(callMeBackView: self, title: "title-legal".localized()!, message: "phone-not-valid".localized()!)
+        }
         if legalSwitch.isOn {
             delegate?.showAlertLegalNotAccepted(callMeBackView: self, title: "title-call".localized()!, message: "call".localized()!)
         } else {
@@ -61,9 +65,6 @@ class CallMeBackView: UIView {
         let headers: HTTPHeaders = [
             "Content-Type": "application/x-www-form-urlencoded",
             "Accept": "application/json",
-            "Referer": "https://www.andorratelecom.ad/web/comercial",
-            "Origin": "https://www.andorratelecom.ad",
-            "X-Requested-With": "XMLHttpRequest"
         ]
         let parameters: Parameters = [
             "_ad_at_portal_callmeback_portlet_CallMeBackPortlet_INSTANCE_callMeBack_body": "343242",
@@ -76,6 +77,13 @@ class CallMeBackView: UIView {
     }*/
     
     @IBAction func iCall(_ sender: UIButton) {
+        if let url = URL(string: "tel://100900900") {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url as URL)
+            }
+        }
     }
     
     func setTextOutlets() {

@@ -82,6 +82,7 @@
                         <constraint firstAttribute="height" constant="31" id="1Kh-kQ-P79"/>
                         <constraint firstAttribute="width" constant="49" id="P0e-YN-RsE"/>
                     </constraints>
+                    <color key="onTintColor" red="0.55294117649999996" green="0.054901960780000002" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="questionCanWeHelp" text="How can we help you?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuX-IO-aeI">
                     <rect key="frame" x="20" y="0.0" width="335" height="50"/>
@@ -110,6 +111,7 @@
                 </textField>
             </subviews>
             <color key="backgroundColor" red="0.96070033310000003" green="0.96083813910000004" blue="0.96067017320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.55294117649999996" green="0.054901960780000002" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KuX-IO-aeI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Ao-Ge-4QW"/>
                 <constraint firstItem="uCi-WP-Vfn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="5P2-kd-1cl"/>
