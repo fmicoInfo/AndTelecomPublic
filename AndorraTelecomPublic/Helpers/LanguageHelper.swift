@@ -64,8 +64,7 @@ class LanguageHelper {
     
     func url(page: Pages) -> String {
         let url = "https://www.andorratelecom.ad/c/portal/update_language?p_l_id=\(page.plid)&redirect=\(page.pathName)&languageId=\(self.formattedId)"
-        print("URL: \(url)")
-        
+        print("\nURL: \(url)")
         return url
     }
     
@@ -76,6 +75,7 @@ class LanguageHelper {
         case paquete69
         case optima
         case legal
+        case map
         
         var plid: String {
             switch self {
@@ -91,6 +91,8 @@ class LanguageHelper {
                 return "106754"
             case .legal:
                 return "34691"
+            case .map:
+                return "33998"
             }
         }
         
@@ -108,6 +110,8 @@ class LanguageHelper {
                 return "/particulares/som-internet-fija/paquetes-internet-fija/optima/"
             case .legal:
                 return "/avis-legal/"
+            case .map:
+                return "/web/comercial/on-som"
             }
         }
     }
