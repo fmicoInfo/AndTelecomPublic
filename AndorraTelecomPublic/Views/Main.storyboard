@@ -22,9 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKi-Mv-Fgt" customClass="PortletDisplayScreenlet" customModule="LiferayScreens">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKi-Mv-Fgt" customClass="PortletDisplayScreenlet">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-Zf-sgv" customClass="UIVisualEffectView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="tintColor" red="0.55294117649999996" green="0.054901960780000002" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GS-J9-w4a">
                                         <rect key="frame" x="95" y="267" width="260" height="400"/>
                                         <subviews>
@@ -72,8 +76,12 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="yDt-Zf-sgv" firstAttribute="top" secondItem="dKi-Mv-Fgt" secondAttribute="top" id="3ze-Qe-lHb"/>
+                                    <constraint firstItem="yDt-Zf-sgv" firstAttribute="leading" secondItem="dKi-Mv-Fgt" secondAttribute="leading" id="8Bk-ty-Na2"/>
                                     <constraint firstAttribute="bottom" secondItem="4GS-J9-w4a" secondAttribute="bottom" id="dig-04-ofO"/>
+                                    <constraint firstAttribute="bottom" secondItem="yDt-Zf-sgv" secondAttribute="bottom" id="fvL-0Y-40e"/>
                                     <constraint firstAttribute="trailing" secondItem="4GS-J9-w4a" secondAttribute="trailing" constant="20" id="sBs-Ry-xvL"/>
+                                    <constraint firstAttribute="trailing" secondItem="yDt-Zf-sgv" secondAttribute="trailing" id="tTV-HI-lV5"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autoLoad" value="NO"/>
@@ -95,6 +103,7 @@
                     <navigationItem key="navigationItem" id="oft-JY-Dju"/>
                     <connections>
                         <outlet property="callMeBack" destination="1gU-kJ-twD" id="eQz-Ny-RhE"/>
+                        <outlet property="coverForClick" destination="yDt-Zf-sgv" id="NmP-3x-540"/>
                         <outlet property="headerCallmeBack" destination="bbm-mc-wkk" id="S2g-BS-wIP"/>
                         <outlet property="heightCallMeBack" destination="E0P-Jc-ZFZ" id="wGm-Lx-NU6"/>
                         <outlet property="labelCallMeBack" destination="tjI-lA-VDT" id="TTu-qq-rKv"/>
@@ -120,12 +129,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghI-Kc-pTa" customClass="PortletDisplayScreenlet" customModule="LiferayScreens">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghI-Kc-pTa" customClass="PortletDisplayScreenlet">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.55157822370529175" green="0.055941067636013031" blue="0.3408622145652771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autoLoad" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="themeName" value="andorra_telecom"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isScrollEnabled" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -151,7 +163,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkR-pt-B0a" customClass="PortletDisplayScreenlet" customModule="LiferayScreens">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkR-pt-B0a" customClass="PortletDisplayScreenlet">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
