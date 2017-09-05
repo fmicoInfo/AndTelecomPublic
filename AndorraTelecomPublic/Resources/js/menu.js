@@ -12,6 +12,8 @@ function buildMenu() {
     removeItemByClassName(bannerTop, 'flex-control-nav flex-control-paging', 0);
     removeItemByClassName(bannerTop, 'flex-direction-nav', 0);
     removeItemsByClassName(bannerTop, 'block-container');
+    bannerTop.style.width = window.innerWidth + 'px';
+    bannerTop.style.height = '175px';
 
     var buttonMap = createButtonMap(contentButtonMap);
     var buttonList = createButtons(icons, titles);
@@ -82,24 +84,9 @@ function addClick(position, button) {
     });
 }
 
-function createBarTop(){
-    var barTop = document.createElement('div');
-    var logo = document.createElement('img');
-
-    barTop.id = 'top-bar-logo';
-    logo.src = 'https://www.andorratelecom.ad/o/atcomercial-theme/images/logo-atelecom.png';
-    barTop.appendChild(logo);
-
-    return barTop;
-}
-
 function getTextCallMeBack() {
     var headerCallMeBack = divCallMeBack.getElementsByTagName('h2')[0];
     window.Screens.postMessage('call-me-back', headerCallMeBack.innerText);
-}
-
-function readyDom(){
-    window.Screens.postMessage('ready-dom', 'less');
 }
 
 buildMenu();

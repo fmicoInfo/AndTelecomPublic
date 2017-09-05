@@ -2,16 +2,6 @@ body{
     background: #D30572 url("https://www.andorratelecom.ad/o/atcomercial-theme/images/bg-pattern-footer.png") no-repeat 25% 145%;
 }
 
-#top-bar-logo{
-    background-color: rgba(141, 14, 87, 0.27);
-    padding: 2.5% 0%;
-    text-align: center; 
-}
-
-#top-bar-logo img{
-    max-width: 45%;
-}
-
 ul{
     margin: 3%;
     margin-top: 6%;
