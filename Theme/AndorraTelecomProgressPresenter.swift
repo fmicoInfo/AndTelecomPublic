@@ -43,5 +43,37 @@ open class AndorraTelecomProgressPresenter: MBProgressHUDPresenter {
         }
         
     }
+    
+    /*
+    open override func hideHUDFromView(_ view: UIView?,
+                              message: String?,
+                              forInteractor interactor: Interactor,
+                              withError error: NSError?) {
+        
+        hideHud()
+        
+    } */
+    
+    open override func hideHUDFromView(_ view: UIView?,
+                              message: String?,
+                              forInteractor interactor: Interactor,
+                              withError error: NSError?) {
+        
+        if message != nil {
+            dispatch_main {
+                if self.instance == nil {
+                    self.instance = MBProgressHUD.showAdded(to: view, animated:true)
+                }
+                
+                self.configureAndShowHUD(self.instance!,
+                                         message: "loading".localized(),
+                                         closeMode: error == nil ? .autoclose_TouchClosable : .manualClose_TouchClosable,
+                                         spinnerMode: .indeterminateSpinner)
+            }
+        }
+        else {
+            hideHud()
+        }
+    }
 
 }
