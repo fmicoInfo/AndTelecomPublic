@@ -22,3 +22,7 @@
 #main-content .product-prices .product-prices-general{
     margin: 0px;
 }
+
+.cc-floating {
+    display: none;
+}
