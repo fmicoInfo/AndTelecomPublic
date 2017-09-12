@@ -36,7 +36,7 @@ PODS:
   - DynamicBlurView (1.3.0)
   - Hokusai (0.4.0)
   - KeychainAccess (3.0.2)
-  - Kingfisher (3.12.1)
+  - Kingfisher (3.12.2)
   - Liferay-iOS-SDK (7.0.12):
     - AFNetworking (= 2.6.3)
   - Liferay-OAuth (1.2.1):
@@ -126,7 +126,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LiferayScreens:
-    :commit: dacb9de105db990b5f8e1cca3772fc25c3c634d1
+    :commit: 860680f17cda9862b7cdf118cd54c1eb55280fec
     :git: https://github.com/liferay/liferay-screens
 
 SPEC CHECKSUMS:
@@ -140,10 +140,10 @@ SPEC CHECKSUMS:
   DynamicBlurView: ca9f6836d4123e20ac1636814077b278b34dd2a2
   Hokusai: aa3c38a5f02af0eff35aa69fdd8249c234c956c0
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
-  Kingfisher: 7e87498c3b795c2b8f6430fd5853ae5b5548ff9c
+  Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
   Liferay-iOS-SDK: f597272f3e96d3bc13650ba0b3fc998ed0d2952d
   Liferay-OAuth: a9ff190558928bec8ebc18dd326b01bddd7e2968
-  LiferayScreens: d63f8fa970c55d1b99f8c0c5d865c7d86531b1f1
+  LiferayScreens: 6b42b2943f4f25c69008d498ebe3978d0f7fe306
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MDRadialProgress: 1068574b9b4b870f64b605b07f734385bde5104d
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -152,6 +152,6 @@ SPEC CHECKSUMS:
   TNRadioButtonGroup: f5fb9b545d8913bbabe6a72ea1fa6fba4d833bb6
   YapDatabase: b1e43555a34a5298e23a045be96817a5ef0da58f
 
-PODFILE CHECKSUM: 0d546146330c85ea286fc6a71c5a3de08e95b945
+PODFILE CHECKSUM: 7bbaee2e67f32a2fe8e6470fd3fadae4b20003c3
 
 COCOAPODS: 1.3.1

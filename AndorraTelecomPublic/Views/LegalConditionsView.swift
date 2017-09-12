@@ -9,11 +9,11 @@
 import UIKit
 import LiferayScreens
 
-class LegalConditionsView: UIView, PortletDisplayScreenletDelegate {
+class LegalConditionsView: UIView, WebScreenletDelegate {
 
     @IBOutlet var view: UIView!
-    
-    @IBOutlet var portletDisplayScreenlet: PortletDisplayScreenlet!
+        
+    @IBOutlet weak var webScreenlet: WebScreenlet!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +23,7 @@ class LegalConditionsView: UIView, PortletDisplayScreenletDelegate {
         view.frame = frame
         view.layer.cornerRadius = 5;
         view.layer.masksToBounds = true;
-        loadPortletScreenlet()
+        loadWebScreenlet()
         
     }
     
@@ -35,21 +35,21 @@ class LegalConditionsView: UIView, PortletDisplayScreenletDelegate {
         view.frame = self.bounds
     }
     
-    func loadPortletScreenlet() {
-        let portletConfiguration = PortletConfiguration
-            .Builder(portletUrl: LanguageHelper.shared().url(page: .legal))
+    func loadWebScreenlet() {
+        let webScreenletConfiguration = WebScreenletConfiguration
+            .Builder(url: LanguageHelper.shared().url(page: .legal))
             .set(webType: .other)
             .addCss(localFile: "legal")
             .addJs(localFile: "legal")
             .load()
         
-        portletDisplayScreenlet.backgroundColor = .clear
-        portletDisplayScreenlet.configuration = portletConfiguration
-        portletDisplayScreenlet.delegate = self
-        portletDisplayScreenlet.load()
+        webScreenlet.backgroundColor = .clear
+        webScreenlet.configuration = webScreenletConfiguration
+        webScreenlet.delegate = self
+        webScreenlet.load()
     }
     
-    func screenlet(_ screenlet: PortletDisplayScreenlet,
+    func screenlet(_ screenlet: WebScreenlet,
                    onPortletError error: NSError){
         print("Legal Condition PDS Error: \(error)")
     }

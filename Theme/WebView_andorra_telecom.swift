@@ -15,7 +15,7 @@ import Foundation
 import LiferayScreens
 
 
-open class PortletDisplayView_andorra_telecom: PortletDisplayView_default {
+open class WebView_andorra_telecom: WebView_default {
     
     override open func createProgressPresenter() -> ProgressPresenter {
         return AndorraTelecomProgressPresenter()

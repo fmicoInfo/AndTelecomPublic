@@ -10,32 +10,32 @@ import Foundation
 import LiferayScreens
 import Hokusai
 
-class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
+class ForfetViewController: UIViewController, WebScreenletDelegate{
 
     var url: String = ""
     var menuList: String = ""
     
-    @IBOutlet weak var portletDisplayScreenlet: PortletDisplayScreenlet!
+    @IBOutlet weak var webScreenlet: WebScreenlet!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPortletScreenlet()
+        loadWebScreenlet()
         addLogoToNavegationBar()
     }
     
-    func loadPortletScreenlet() {
-        let portletConfiguration = PortletConfiguration
-            .Builder(portletUrl: self.url)
+    func loadWebScreenlet() {
+        let webScreenletConfiguration = WebScreenletConfiguration
+            .Builder(url: self.url)
             .set(webType: .other)
             .addCss(localFile: "forfet")
             .addJs(localFile: "forfet")
             .load()
         
-        portletDisplayScreenlet.configuration = portletConfiguration
+        webScreenlet.configuration = webScreenletConfiguration
         
-        portletDisplayScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
-        portletDisplayScreenlet.load()
-        portletDisplayScreenlet.delegate = self
+        webScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
+        webScreenlet.load()
+        webScreenlet.delegate = self
     }
     
     func addLogoToNavegationBar() {
@@ -70,7 +70,7 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
             var item = fullList[i].components(separatedBy: ",")
         
             let itemAction: UIAlertAction = UIAlertAction(title: item[0], style: .default) { action -> Void in
-                self.portletDisplayScreenlet.inject(injectableScript: JsScript(name: item[0], js: "gotoId(\"\(item[1])\")"))
+                self.webScreenlet.inject(injectableScript: JsScript(name: item[0], js: "gotoId(\"\(item[1])\")"))
             }
             actionSheetController.addAction(itemAction)
         }
@@ -95,14 +95,14 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
             var item = fullList[i].components(separatedBy: ",")
             
             hokusai.addButton(item[0]) {
-                self.portletDisplayScreenlet.inject(injectableScript: JsScript(name: item[0], js: "gotoId(\"\(item[1])\")"))
+                self.webScreenlet.inject(injectableScript: JsScript(name: item[0], js: "gotoId(\"\(item[1])\")"))
             }
         }
         
         hokusai.show()
     }
     
-    func screenlet(_ screenlet: PortletDisplayScreenlet, onScriptMessageNamespace namespace: String, onScriptMessage message: String) {
+    func screenlet(_ screenlet: WebScreenlet, onScriptMessageNamespace namespace: String, onScriptMessage message: String) {
         switch namespace {
         case "menu":
             menuList = message
@@ -113,8 +113,8 @@ class ForfetViewController: UIViewController, PortletDisplayScreenletDelegate{
         
     }
     
-    func onPortletPageLoaded(_ screenlet: PortletDisplayScreenlet, url: String) {
-        portletDisplayScreenlet.inject(injectableScript: JsScript(name: "Nombre", js: "ahora()"))
+    func onWebLoad(_ screenlet: WebScreenlet, url: String) {
+        webScreenlet.inject(injectableScript: JsScript(name: "Nombre", js: "ahora()"))
     }
     
 }

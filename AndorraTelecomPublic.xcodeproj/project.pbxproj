@@ -35,8 +35,8 @@
 		4B9A91231F3C67EC007DB477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91221F3C67EC007DB477 /* Assets.xcassets */; };
 		4B9A91261F3C681A007DB477 /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A91251F3C681A007DB477 /* LanguageHelper.swift */; };
 		4B9A91321F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A912F1F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift */; };
-		4B9A91331F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A91301F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift */; };
-		4B9A91341F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91311F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib */; };
+		4B9A91331F3C6A62007DB477 /* WebView_andorra_telecom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A91301F3C6A62007DB477 /* WebView_andorra_telecom.swift */; };
+		4B9A91341F3C6A62007DB477 /* WebView_andorra_telecom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91311F3C6A62007DB477 /* WebView_andorra_telecom.xib */; };
 		4B9A913F1F3C71D2007DB477 /* translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A91411F3C71D2007DB477 /* translations.strings */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +74,8 @@
 		4B9A91221F3C67EC007DB477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B9A91251F3C681A007DB477 /* LanguageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageHelper.swift; sourceTree = "<group>"; };
 		4B9A912F1F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndorraTelecomProgressPresenter.swift; sourceTree = "<group>"; };
-		4B9A91301F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortletDisplayView_andorra_telecom.swift; sourceTree = "<group>"; };
-		4B9A91311F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortletDisplayView_andorra_telecom.xib; sourceTree = "<group>"; };
+		4B9A91301F3C6A62007DB477 /* WebView_andorra_telecom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView_andorra_telecom.swift; sourceTree = "<group>"; };
+		4B9A91311F3C6A62007DB477 /* WebView_andorra_telecom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebView_andorra_telecom.xib; sourceTree = "<group>"; };
 		4B9A91401F3C71D2007DB477 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/translations.strings; sourceTree = "<group>"; };
 		569E07E5BEA618B6FE707643 /* Pods_AndorraTelecomPublic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AndorraTelecomPublic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6661B11A4AE031863E199AEC /* Pods-AndorraTelecomPublic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AndorraTelecomPublic.release.xcconfig"; path = "Pods/Target Support Files/Pods-AndorraTelecomPublic/Pods-AndorraTelecomPublic.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,8 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				4B9A912F1F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift */,
-				4B9A91301F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift */,
-				4B9A91311F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib */,
+				4B9A91301F3C6A62007DB477 /* WebView_andorra_telecom.swift */,
+				4B9A91311F3C6A62007DB477 /* WebView_andorra_telecom.xib */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				4B7A38571F4848EA00567D19 /* Main.storyboard in Resources */,
 				4B9A910F1F3C66D6007DB477 /* forfet.js in Resources */,
 				4B7A38601F4860A100567D19 /* CallMeBackView.xib in Resources */,
-				4B9A91341F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.xib in Resources */,
+				4B9A91341F3C6A62007DB477 /* WebView_andorra_telecom.xib in Resources */,
 				4B9A910D1F3C66D6007DB477 /* menu.css in Resources */,
 				4B7A38721F48F47000567D19 /* legal.js in Resources */,
 				4B9A910E1F3C66D6007DB477 /* map.js in Resources */,
@@ -430,7 +430,7 @@
 				4B9A91321F3C6A62007DB477 /* AndorraTelecomProgressPresenter.swift in Sources */,
 				4B7A38591F48497700567D19 /* CallMeBackView.swift in Sources */,
 				4B7A38681F48982300567D19 /* MapViewController.swift in Sources */,
-				4B9A91331F3C6A62007DB477 /* PortletDisplayView_andorra_telecom.swift in Sources */,
+				4B9A91331F3C6A62007DB477 /* WebView_andorra_telecom.swift in Sources */,
 				4B7A38661F488E8200567D19 /* CallMeBackDelegate.swift in Sources */,
 				4B9A91191F3C678A007DB477 /* ForfetViewController.swift in Sources */,
 				4B45A59E1F5E8753002E2052 /* UIView.swift in Sources */,

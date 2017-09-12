@@ -11,11 +11,12 @@ import LiferayScreens
 
 class MapViewController: UIViewController {
     
-    @IBOutlet var portletDisplayScreenlet: PortletDisplayScreenlet!
+    
+    @IBOutlet weak var webScreenlet: WebScreenlet!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPortletScreenlet()
+        loadWebScreenlet()
         addLogoToNavegationBar()
     }
     
@@ -23,18 +24,16 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func loadPortletScreenlet() {
-        let portletConfiguration = PortletConfiguration
-            .Builder(portletUrl: LanguageHelper.shared().url(page: .map))
+    func loadWebScreenlet() {
+        let webScreenletConfiguration = WebScreenletConfiguration
+            .Builder(url: LanguageHelper.shared().url(page: .map))
             .set(webType: .other)
             .addCss(localFile: "map")
             .addJs(localFile: "map")
             .load()
-        portletDisplayScreenlet.configuration = portletConfiguration
-        
-        portletDisplayScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
-        
-        portletDisplayScreenlet.load()
+        webScreenlet.configuration = webScreenletConfiguration
+        webScreenlet.backgroundColor = UIColor(red:0.83, green:0.02, blue:0.45, alpha:1.0)
+        webScreenlet.load()
     }
     
     func addLogoToNavegationBar() {

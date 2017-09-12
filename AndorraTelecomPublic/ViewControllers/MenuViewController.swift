@@ -10,9 +10,10 @@ import UIKit
 import LiferayScreens
 import Hokusai
 
-class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, CallMeBackDelegate {
+class MenuViewController: UIViewController, WebScreenletDelegate, CallMeBackDelegate {
     
-    @IBOutlet weak var portletDisplayScreenlet: PortletDisplayScreenlet!
+    @IBOutlet weak var webScreenlet: WebScreenlet!
+    
     
     @IBOutlet weak var heightCallMeBack: NSLayoutConstraint!
     @IBOutlet weak var headerCallmeBack: UIView!
@@ -32,7 +33,7 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         
         buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
         textButtonBack()
-        loadPortletScreenlet()
+        loadWebScreenlet()
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,7 +102,7 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
     func actionChangeLanguage(value: String) {
         LanguageHelper.shared().change(language: value)
         self.buttonChangeLanguage(language: LanguageHelper.shared().threeLettersFormatted)
-        self.loadPortletScreenlet()
+        self.loadWebScreenlet()
         self.textButtonBack()
         self.callMeBack.setTextOutlets()
     }
@@ -161,27 +162,27 @@ class MenuViewController: UIViewController, PortletDisplayScreenletDelegate, Cal
         self.coverNavegationBar?.isUserInteractionEnabled = false
     }
     
-    func loadPortletScreenlet() {
-        let portletConfiguration = PortletConfiguration
-            .Builder(portletUrl: LanguageHelper.shared().url(page: .index))
+    func loadWebScreenlet() {
+        let webScreenletConfiguration = WebScreenletConfiguration
+            .Builder(url: LanguageHelper.shared().url(page: .index))
             .set(webType: .other)
             .addCss(localFile: "menu")
             .addJs(localFile: "menu")
             .load()
-        portletDisplayScreenlet.configuration = portletConfiguration
-        portletDisplayScreenlet.isScrollEnabled = false
-        portletDisplayScreenlet.backgroundColor = UIColor.lightPurple
+        webScreenlet.configuration = webScreenletConfiguration
+        webScreenlet.isScrollEnabled = false
+        webScreenlet.backgroundColor = UIColor.lightPurple
         
-        portletDisplayScreenlet.load()
-        portletDisplayScreenlet.delegate = self
+        webScreenlet.load()
+        webScreenlet.delegate = self
     }
     
-    func onPortletPageLoaded(_ screenlet: PortletDisplayScreenlet, url: String) {
+    func onWebLoad(_ screenlet: WebScreenlet, url: String) {
         prepareCoverNavegationBar()
         attachClickHeaderCallBack()
     }
     
-    func screenlet(_ screenlet: PortletDisplayScreenlet, onScriptMessageNamespace namespace: String, onScriptMessage message: String) {
+    func screenlet(_ screenlet: WebScreenlet, onScriptMessageNamespace namespace: String, onScriptMessage message: String) {
         switch namespace {
             case "call-me-back":
                 createPopOverCallMeBack(message: message);

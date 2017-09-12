@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKi-Mv-Fgt" customClass="PortletDisplayScreenlet">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKi-Mv-Fgt" customClass="WebScreenlet">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-Zf-sgv" customClass="UIVisualEffectView">
@@ -107,8 +107,8 @@
                         <outlet property="headerCallmeBack" destination="bbm-mc-wkk" id="S2g-BS-wIP"/>
                         <outlet property="heightCallMeBack" destination="E0P-Jc-ZFZ" id="wGm-Lx-NU6"/>
                         <outlet property="labelCallMeBack" destination="tjI-lA-VDT" id="TTu-qq-rKv"/>
-                        <outlet property="portletDisplayScreenlet" destination="dKi-Mv-Fgt" id="2FN-hY-r6f"/>
                         <outlet property="viewCallmeBack" destination="4GS-J9-w4a" id="TB1-Zx-mkv"/>
+                        <outlet property="webScreenlet" destination="dKi-Mv-Fgt" id="QeI-os-jHI"/>
                         <segue destination="Abs-kR-uGI" kind="show" identifier="forfet" id="gAD-hF-kR1"/>
                         <segue destination="kvk-UR-eif" kind="show" identifier="map" id="7iY-9v-XUp"/>
                     </connections>
@@ -129,7 +129,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghI-Kc-pTa" customClass="PortletDisplayScreenlet">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghI-Kc-pTa" customClass="WebScreenlet">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,7 +144,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="portletDisplayScreenlet" destination="ghI-Kc-pTa" id="CT9-rL-meV"/>
+                        <outlet property="webScreenlet" destination="ghI-Kc-pTa" id="ANy-sL-mk8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spX-6W-ITO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +163,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkR-pt-B0a" customClass="PortletDisplayScreenlet">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkR-pt-B0a" customClass="WebScreenlet">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -174,14 +174,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LkR-pt-B0a" firstAttribute="leading" secondItem="z8W-bd-81b" secondAttribute="leading" id="5AX-0D-2fs"/>
-                            <constraint firstItem="LkR-pt-B0a" firstAttribute="bottom" secondItem="wRU-nr-lyc" secondAttribute="top" id="7Af-kJ-htJ"/>
-                            <constraint firstItem="LkR-pt-B0a" firstAttribute="top" secondItem="z8W-bd-81b" secondAttribute="top" id="Yre-G9-dre"/>
-                            <constraint firstAttribute="trailing" secondItem="LkR-pt-B0a" secondAttribute="trailing" id="gCz-g3-0bd"/>
+                            <constraint firstAttribute="trailing" secondItem="LkR-pt-B0a" secondAttribute="trailing" id="EVh-Ms-Plm"/>
+                            <constraint firstAttribute="bottom" secondItem="LkR-pt-B0a" secondAttribute="bottom" id="aur-D0-y1v"/>
+                            <constraint firstItem="LkR-pt-B0a" firstAttribute="leading" secondItem="z8W-bd-81b" secondAttribute="leading" id="rfq-fl-lKB"/>
+                            <constraint firstItem="LkR-pt-B0a" firstAttribute="top" secondItem="z8W-bd-81b" secondAttribute="top" id="t5a-VH-Yi3"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="portletDisplayScreenlet" destination="LkR-pt-B0a" id="vOy-ak-GYj"/>
+                        <outlet property="webScreenlet" destination="LkR-pt-B0a" id="TGO-CX-TDI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYI-Pn-sXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
